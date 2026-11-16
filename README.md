@@ -1,6 +1,10 @@
+![OpenSource Copilot](docs/assets/opensource-copilot-logo.svg)
+
 # OpenSource Copilot
 
-AI-assisted maintenance workspace for open-source GitHub projects.
+AI-assisted maintenance workspace for open-source GitHub projects. Triage issues and review pull requests with AI assistance while keeping every repository action under maintainer control.
+
+[![CI](https://github.com/TannishtoDasGupta/OpenSource-Copilot/actions/workflows/ci.yml/badge.svg)](https://github.com/TannishtoDasGupta/OpenSource-Copilot/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB)](https://www.python.org/) [![FastAPI](https://img.shields.io/badge/API-FastAPI-009688)](https://fastapi.tiangolo.com/)
 
 ## MVP features
 - Issue triage: summarize, classify, estimate priority, and suggest next steps.
@@ -18,7 +22,7 @@ Requires Python 3.11+.
 git clone https://github.com/TannishtoDasGupta/OpenSource-Copilot.git
 cd OpenSource-Copilot
 python -m venv .venv
-# Windows: .venv\Scripts\activate
+# Windows: .venv\\Scripts\\activate
 # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
@@ -37,6 +41,9 @@ Open http://127.0.0.1:8000; API docs: http://127.0.0.1:8000/docs.
 
 Repository content is untrusted input. Diff excerpts are bounded before model submission.
 
+## Deployment
+A Render Blueprint is included in [render.yaml](render.yaml). See [deployment instructions](docs/DEPLOYMENT.md) for setup and environment variables.
+
 ## Development
 ```bash
 pip install -r requirements-dev.txt
@@ -46,4 +53,4 @@ pytest
 ## Limitations and roadmap
 This is an early-stage MVP. AI output can be incomplete or incorrect and must be reviewed. It is not a security scanner or a replacement for human code review. Planned: triage history, configurable rules, webhooks, richer test planning, and multi-repository workspaces.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). No license has been selected yet; normal copyright restrictions apply.
+See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [deployment instructions](docs/DEPLOYMENT.md). No license has been selected yet; normal copyright restrictions apply.
