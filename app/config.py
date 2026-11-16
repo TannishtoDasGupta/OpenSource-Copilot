@@ -1,12 +1,16 @@
 from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
 class Settings(BaseSettings):
+    app_api_key: str = ""
     openai_api_key: str = ""
     openai_model: str = "gpt-5.5"
     github_token: str = ""
     github_api_url: str = "https://api.github.com"
+
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
 
 @lru_cache
 def get_settings() -> Settings:
