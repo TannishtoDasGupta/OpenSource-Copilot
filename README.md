@@ -53,4 +53,4 @@ pytest
 ## Limitations and roadmap
 This is an early-stage MVP. AI output can be incomplete or incorrect and must be reviewed. It is not a security scanner or a replacement for human code review. Planned: triage history, configurable rules, webhooks, richer test planning, and multi-repository workspaces.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [deployment instructions](docs/DEPLOYMENT.md). No license has been selected yet; normal copyright restrictions apply.
+See [LICENSE](LICENSE), [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [deployment instructions](docs/DEPLOYMENT.md). This project is licensed under the MIT License.
