@@ -31,6 +31,12 @@ def test_analysis_routes_reject_wrong_app_key(monkeypatch):
     assert response.status_code == 401
 
 
+def test_analysis_routes_validate_payload_after_authentication(monkeypatch):
+    monkeypatch.setattr("app.security.get_settings", lambda: SimpleNamespace(app_api_key="a" * 40))
+    response = client.post("/api/triage/text", headers={"X-App-API-Key": "a" * 40}, json={"title": ""})
+    assert response.status_code == 422
+
+
 def test_analysis_routes_accept_app_key_then_report_missing_openai_key(monkeypatch):
     monkeypatch.setattr("app.security.get_settings", lambda: SimpleNamespace(app_api_key="a" * 40))
     monkeypatch.setattr("app.services.ai.get_settings", lambda: SimpleNamespace(openai_api_key="", openai_model="gpt-5.5"))
